@@ -6,7 +6,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -20,8 +19,8 @@
 |name|sring|null: false, foreign_key: true|
 
 ### Association
-- has_many :user
-- has_many :group
+- has_many :users
+- has_many :groups
 
 ## messageテーブル
 
@@ -45,6 +44,8 @@
 |group|reference|foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :groups
+- has_many :users, through: :gorup_users
+
+
 * ...
